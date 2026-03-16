@@ -14,7 +14,7 @@ clean: stop
 	rm -f com.local.TimeApp.plist
 
 install: all
-	@echo "Generating launchd plist for current directory: $$(PWD)"
+	@echo "Generating launchd plist for current directory: $(CURDIR)"
 	@echo '<?xml version="1.0" encoding="UTF-8"?>' > com.local.TimeApp.plist
 	@echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >> com.local.TimeApp.plist
 	@echo '<plist version="1.0">' >> com.local.TimeApp.plist
@@ -24,7 +24,7 @@ install: all
 	@echo '    <key>ProgramArguments</key>' >> com.local.TimeApp.plist
 	@echo '    <array>' >> com.local.TimeApp.plist
 	@echo '        <string>/usr/bin/open</string>' >> com.local.TimeApp.plist
-	@echo '        <string>$$(PWD)/TimeApp.app</string>' >> com.local.TimeApp.plist
+	@echo '        <string>$(CURDIR)/TimeApp.app</string>' >> com.local.TimeApp.plist
 	@echo '    </array>' >> com.local.TimeApp.plist
 	@echo '    <key>RunAtLoad</key>' >> com.local.TimeApp.plist
 	@echo '    <true/>' >> com.local.TimeApp.plist

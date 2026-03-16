@@ -34,8 +34,9 @@ This project uses a simple Bash script wrapped in a `Makefile` to compile the Sw
    ```bash
    make install
    ```
-   *This builds the app and registers a `launchd` plist so that TimeApp automatically starts whenever you log in.* 
-   *To remove it from startup, run `make uninstall`.*
+   *This builds the app and dynamically generates a `launchd` plist (`com.local.TimeApp.plist`) using the current directory's absolute path. It then registers it with macOS so that TimeApp automatically starts whenever you log in.* 
+   *If you move the project folder, you must run `make uninstall` and then `make install` in the new location to update the path.*
+   *To remove it from startup completely, run `make uninstall`.*
 
 3. **Stop the App:**
    ```bash

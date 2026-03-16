@@ -7,7 +7,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/usr/bin/open</string>
-        <string>/Users/mmcdonnell/code/time-app/TimeApp.app</string>
+        <string>$(PWD)/TimeApp.app</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
