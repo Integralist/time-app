@@ -57,7 +57,8 @@ class TimezoneManager: ObservableObject {
         formatter.dateFormat = "EEE HH:mm:ss"
         let localStr = formatter.string(from: date)
         
-        var parts = [localStr]
+        let localFlag = timezones.first(where: { $0.name == "Local" })?.flag ?? "📍"
+        var parts = ["\(localFlag) \(localStr)"]
         
         // Append any pinned timezones
         for tz in timezones {
