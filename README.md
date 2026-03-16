@@ -30,13 +30,20 @@ This project uses a simple Bash script wrapped in a `Makefile` to compile the Sw
    ```
    *This will compile the app, kill any existing instances, and launch it. Check your top-right menu bar!*
 
-2. **Stop the App:**
+2. **Launch on Startup (macOS):**
+   ```bash
+   make install
+   ```
+   *This builds the app and registers a `launchd` plist so that TimeApp automatically starts whenever you log in.* 
+   *To remove it from startup, run `make uninstall`.*
+
+3. **Stop the App:**
    ```bash
    make stop
    ```
    *Alternatively, click the menu bar item and select "Quit TimeApp".*
 
-3. **Clean the Build:**
+4. **Clean the Build:**
    ```bash
    make clean
    ```
